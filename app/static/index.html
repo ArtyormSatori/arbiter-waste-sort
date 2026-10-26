@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WasteSense AI — Intelligent Waste-Sort Assistant</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="brand-row">
+        <div class="logo-group">
+          <div class="logo-icon">♻️</div>
+          <div>
+            <h1>WasteSense AI</h1>
+            <p class="tagline">Intelligent Edge-Vision Waste Classifier & Municipal Bin Assistant</p>
+          </div>
+        </div>
+        <div class="badge-cluster">
+          <span class="badge theme-badge">Arbiter Hacks V1 • Rethinking Waste</span>
+          <span class="badge edge-badge">⚡ Edge CPU ViT</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Grid -->
+    <main class="main-grid">
+      <!-- Left Column: Input and Upload -->
+      <section class="card input-card">
+        <div class="card-header">
+          <h2>1. Snap or Upload Waste Photo</h2>
+          <span class="subtext">Real-time local computer vision inference</span>
+        </div>
+
+        <!-- Dropzone -->
+        <div id="dropzone" class="dropzone">
+          <input type="file" id="file-input" accept="image/*" class="file-input">
+          <input type="file" id="camera-input" accept="image/*" capture="environment" class="file-input">
+          
+          <div id="dropzone-prompt" class="dropzone-prompt">
+            <div class="upload-icon">📷</div>
+            <p class="drop-title">Drag & drop photo here</p>
+            <p class="drop-sub">Supports JPEG, PNG, WebP up to 15 MB</p>
+            <div class="btn-group">
+              <button type="button" class="btn btn-secondary" onclick="document.getElementById('file-input').click()">
+                Browse File
+              </button>
+              <button type="button" class="btn btn-primary" onclick="document.getElementById('camera-input').click()">
+                Take Photo
+              </button>
+            </div>
+          </div>
+
+          <div id="image-preview-wrapper" class="preview-wrapper hidden">
+            <img id="image-preview" src="" alt="Waste item preview" class="preview-img">
+            <button id="btn-clear" class="btn-clear" title="Remove photo">&times;</button>
+          </div>
+        </div>
+
+        <!-- Quick Sample Presets -->
+        <div class="sample-section">
+          <span class="sample-label">Or test with real verified waste samples:</span>
+          <div class="sample-chips" id="sample-chips">
+            <button class="chip" data-sample="recyclable_plastic_bottle.jpg">🍾 Plastic Bottle</button>
+            <button class="chip" data-sample="organic_banana_peel.jpg">🍌 Banana Peel</button>
+            <button class="chip" data-sample="hazardous_batteries.jpg">🔋 AA Battery</button>
+            <button class="chip" data-sample="recyclable_cardboard_box.jpg">📦 Cardboard Box</button>
+            <button class="chip" data-sample="recyclable_aluminum_can.jpg">🥫 Soda Can</button>
+            <button class="chip" data-sample="nonrecyclable_old_shoes.jpg">👟 Old Shoes</button>
+          </div>
+        </div>
+
+        <!-- Inference Status Indicator -->
+        <div id="inference-status" class="inference-status hidden">
+          <div class="spinner"></div>
+          <span>Analyzing visual features using Vision Transformer...</span>
+        </div>
+      </section>
+
+      <!-- Right Column: Classification Results -->
+      <section class="card results-card" id="results-card">
+        <div class="card-header">
+          <h2>2. Classification & Disposal Guidance</h2>
+          <span id="latency-badge" class="latency-badge hidden">-- ms</span>
+        </div>
+
+        <!-- Empty State Placeholder -->
+        <div id="empty-state" class="empty-state">
+          <div class="empty-icon">🗑️</div>
+          <h3>Awaiting Waste Item</h3>
+          <p>Upload a photo or choose a sample to see instant classification, bin recommendation, and disposal reasoning.</p>
+        </div>
+
+        <!-- Active Result Container -->
+        <div id="result-content" class="result-content hidden">
+          <!-- Primary Outcome Row -->
+          <div class="category-banner" id="category-banner">
+            <div class="banner-left">
+              <span class="category-kicker">CLASSIFICATION OUTCOME</span>
+              <h3 id="res-category" class="res-category">Recyclable</h3>
+              <p id="res-detected-item" class="res-detected-item">Plastic Beverage Bottle</p>
+            </div>
+            <div class="banner-right">
+              <div class="confidence-circle">
+                <span id="res-confidence" class="confidence-val">99%</span>
+                <span class="confidence-lbl">Confidence</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Municipal Target Bin Card -->
+          <div class="bin-card" id="bin-card">
+            <div class="bin-swatch" id="bin-swatch"></div>
+            <div class="bin-details">
+              <span class="bin-kicker">RECOMMENDED MUNICIPAL BIN</span>
+              <h4 id="res-bin-name" class="res-bin-name">Blue Bin (Paper & Cardboard)</h4>
+            </div>
+          </div>
+
+          <!-- Why in one short paragraph -->
+          <div class="why-card">
+            <h4>💡 Why this item belongs here:</h4>
+            <p id="res-why-paragraph" class="why-paragraph"></p>
+          </div>
+
+          <!-- Preparation Checklist -->
+          <div class="prep-card">
+            <h4>Preparation & Safety Steps:</h4>
+            <ul id="res-prep-list" class="prep-list"></ul>
+          </div>
+
+          <!-- Environmental Impact Note -->
+          <div class="impact-card">
+            <span class="impact-icon">🌱</span>
+            <p id="res-impact-text" class="impact-text"></p>
+          </div>
+
+          <!-- Top Alternative Predictions -->
+          <div class="breakdown-card">
+            <h4>Vision Model Probabilities:</h4>
+            <div id="prob-bars" class="prob-bars"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Benchmark & Measurement Accordion -->
+    <section class="card benchmark-card">
+      <div class="benchmark-header" id="benchmark-toggle">
+        <div>
+          <h3>📊 Empirical Measurement & Benchmark Evaluation</h3>
+          <p class="subtext">Theme track requirement: 19 real waste test photos measured on CPU</p>
+        </div>
+        <div class="benchmark-stats-preview">
+          <span class="stat-pill success-pill">Accuracy: <strong>84.21%</strong></span>
+          <span class="stat-pill">Avg Latency: <strong>~1.4s</strong></span>
+          <button class="btn btn-sm btn-outline" id="toggle-benchmark-btn">View Full Test Set</button>
+        </div>
+      </div>
+
+      <div id="benchmark-details" class="benchmark-details hidden">
+        <div class="benchmark-metrics-grid">
+          <div class="metric-box">
+            <span class="metric-num">19</span>
+            <span class="metric-label">Real Waste Photos</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-num">84.21%</span>
+            <span class="metric-label">Category Accuracy</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-num">73.68%</span>
+            <span class="metric-label">Fine Label Accuracy</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-num">100%</span>
+            <span class="metric-label">Organic & Hazardous Recall</span>
+          </div>
+        </div>
+
+        <table class="benchmark-table">
+          <thead>
+            <tr>
+              <th>File</th>
+              <th>Ground Truth</th>
+              <th>Predicted Category</th>
+              <th>Predicted Label</th>
+              <th>Confidence</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="benchmark-tbody">
+            <!-- Dynamically populated from /api/benchmark -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>WasteSense AI • Built for Arbiter Hacks V1 (Dec 2026) • MIT License</p>
+      <p class="footer-sub">Zero-AVX2 Edge Vision Runtime • Fully Real Model Inference • ArtyormSatori</p>
+    </footer>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

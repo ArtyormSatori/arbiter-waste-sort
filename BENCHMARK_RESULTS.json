@@ -1,0 +1,241 @@
+{
+  "total_samples": 19,
+  "correct_category_count": 16,
+  "category_accuracy_pct": 84.21,
+  "correct_label_count": 14,
+  "label_accuracy_pct": 73.68,
+  "avg_latency_ms": 1441.31,
+  "per_category_accuracy": {
+    "organic": {
+      "total": 2,
+      "correct": 2,
+      "accuracy_pct": 100.0
+    },
+    "hazardous": {
+      "total": 2,
+      "correct": 2,
+      "accuracy_pct": 100.0
+    },
+    "recyclable": {
+      "total": 10,
+      "correct": 10,
+      "accuracy_pct": 100.0
+    },
+    "non-recyclable": {
+      "total": 5,
+      "correct": 2,
+      "accuracy_pct": 40.0
+    }
+  },
+  "details": [
+    {
+      "file": "organic_banana_peel.jpg",
+      "ground_truth_category": "organic",
+      "ground_truth_label": "biological",
+      "predicted_category": "organic",
+      "predicted_label": "biological",
+      "confidence": 0.9973,
+      "category_match": true,
+      "label_match": true,
+      "latency_ms": 1149.46
+    },
+    {
+      "file": "hazardous_batteries.jpg",
+      "ground_truth_category": "hazardous",
+      "ground_truth_label": "battery",
+      "predicted_category": "hazardous",
+      "predicted_label": "battery",
+      "confidence": 0.9984,
+      "category_match": true,
+      "label_match": true,
+      "latency_ms": 1734.63
+    },
+    {
+      "file": "recyclable_plastic_bottle.jpg",
+      "ground_truth_category": "recyclable",
+      "ground_truth_label": "plastic",
+      "predicted_category": "recyclable",
+      "predicted_label": "plastic",
+      "confidence": 0.9968,
+      "category_match": true,
+      "label_match": true,
+      "latency_ms": 1083.78
+    },
+    {
+      "file": "recyclable_cardboard_box.jpg",
+      "ground_truth_category": "recyclable",
+      "ground_truth_label": "cardboard",
+      "predicted_category": "recyclable",
+      "predicted_label": "cardboard",
+      "confidence": 0.9983,
+      "category_match": true,
+      "label_match": true,
+      "latency_ms": 1346.72
+    },
+    {
+      "file": "recyclable_cardboard_packaging.jpg",
+      "ground_truth_category": "recyclable",
+      "ground_truth_label": "cardboard",
+      "predicted_category": "recyclable",
+      "predicted_label": "cardboard",
+      "confidence": 0.9982,
+      "category_match": true,
+      "label_match": true,
+      "latency_ms": 1787.53
+    },
+    {
+      "file": "recyclable_aluminum_can.jpg",
+      "ground_truth_category": "recyclable",
+      "ground_truth_label": "metal",
+      "predicted_category": "recyclable",
+      "predicted_label": "metal",
+      "confidence": 0.9967,
+      "category_match": true,
+      "label_match": true,
+      "latency_ms": 2110.03
+    },
+    {
+      "file": "recyclable_metal_tin.jpg",
+      "ground_truth_category": "recyclable",
+      "ground_truth_label": "metal",
+      "predicted_category": "recyclable",
+      "predicted_label": "metal",
+      "confidence": 0.9969,
+      "category_match": true,
+      "label_match": true,
+      "latency_ms": 2457.49
+    },
+    {
+      "file": "recyclable_glass_jar.jpg",
+      "ground_truth_category": "recyclable",
+      "ground_truth_label": "brown-glass",
+      "predicted_category": "recyclable",
+      "predicted_label": "brown-glass",
+      "confidence": 0.9975,
+      "category_match": true,
+      "label_match": true,
+      "latency_ms": 1413.9
+    },
+    {
+      "file": "recyclable_green_glass.jpg",
+      "ground_truth_category": "recyclable",
+      "ground_truth_label": "green-glass",
+      "predicted_category": "recyclable",
+      "predicted_label": "white-glass",
+      "confidence": 0.9959,
+      "category_match": true,
+      "label_match": false,
+      "latency_ms": 1066.25
+    },
+    {
+      "file": "recyclable_office_paper.jpg",
+      "ground_truth_category": "recyclable",
+      "ground_truth_label": "paper",
+      "predicted_category": "recyclable",
+      "predicted_label": "paper",
+      "confidence": 0.9983,
+      "category_match": true,
+      "label_match": true,
+      "latency_ms": 1099.97
+    },
+    {
+      "file": "recyclable_newspaper.jpg",
+      "ground_truth_category": "recyclable",
+      "ground_truth_label": "paper",
+      "predicted_category": "recyclable",
+      "predicted_label": "paper",
+      "confidence": 0.9983,
+      "category_match": true,
+      "label_match": true,
+      "latency_ms": 1181.64
+    },
+    {
+      "file": "recyclable_detergent_plastic.jpg",
+      "ground_truth_category": "recyclable",
+      "ground_truth_label": "plastic",
+      "predicted_category": "recyclable",
+      "predicted_label": "plastic",
+      "confidence": 0.9968,
+      "category_match": true,
+      "label_match": true,
+      "latency_ms": 1106.74
+    },
+    {
+      "file": "nonrecyclable_landfill_trash1.jpg",
+      "ground_truth_category": "non-recyclable",
+      "ground_truth_label": "trash",
+      "predicted_category": "recyclable",
+      "predicted_label": "plastic",
+      "confidence": 0.9966,
+      "category_match": false,
+      "label_match": false,
+      "latency_ms": 1745.56
+    },
+    {
+      "file": "nonrecyclable_styrofoam_crushed.jpg",
+      "ground_truth_category": "non-recyclable",
+      "ground_truth_label": "trash",
+      "predicted_category": "recyclable",
+      "predicted_label": "plastic",
+      "confidence": 0.9944,
+      "category_match": false,
+      "label_match": false,
+      "latency_ms": 1211.88
+    },
+    {
+      "file": "nonrecyclable_composite_wrapper.jpg",
+      "ground_truth_category": "non-recyclable",
+      "ground_truth_label": "trash",
+      "predicted_category": "recyclable",
+      "predicted_label": "plastic",
+      "confidence": 0.9965,
+      "category_match": false,
+      "label_match": false,
+      "latency_ms": 1199.38
+    },
+    {
+      "file": "hazardous_aaa_batteries.jpg",
+      "ground_truth_category": "hazardous",
+      "ground_truth_label": "battery",
+      "predicted_category": "hazardous",
+      "predicted_label": "battery",
+      "confidence": 0.9985,
+      "category_match": true,
+      "label_match": true,
+      "latency_ms": 1102.8
+    },
+    {
+      "file": "organic_rotten_apple.jpg",
+      "ground_truth_category": "organic",
+      "ground_truth_label": "biological",
+      "predicted_category": "organic",
+      "predicted_label": "biological",
+      "confidence": 0.9982,
+      "category_match": true,
+      "label_match": true,
+      "latency_ms": 1764.57
+    },
+    {
+      "file": "nonrecyclable_old_shoes.jpg",
+      "ground_truth_category": "non-recyclable",
+      "ground_truth_label": "shoes",
+      "predicted_category": "non-recyclable",
+      "predicted_label": "shoes",
+      "confidence": 0.9953,
+      "category_match": true,
+      "label_match": true,
+      "latency_ms": 1147.57
+    },
+    {
+      "file": "nonrecyclable_clothing_pile.jpg",
+      "ground_truth_category": "non-recyclable",
+      "ground_truth_label": "clothes",
+      "predicted_category": "non-recyclable",
+      "predicted_label": "shoes",
+      "confidence": 0.3229,
+      "category_match": true,
+      "label_match": false,
+      "latency_ms": 1675.0
+    }
+  ]
+}

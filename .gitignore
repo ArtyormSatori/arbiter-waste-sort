@@ -1,0 +1,24 @@
+# Python artifacts
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Testing & caches
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+
+# Environment & credentials (never commit secrets)
+.env
+*.env
+*.pem
+*.key
+*.token
+
+# System files
+.DS_Store
+Thumbs.db

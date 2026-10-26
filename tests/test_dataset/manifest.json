@@ -1,0 +1,116 @@
+[
+  {
+    "file": "organic_banana_peel.jpg",
+    "target_category": "organic",
+    "ground_truth_label": "biological",
+    "source": "Wikimedia Commons (File:Banana peel.jpg)"
+  },
+  {
+    "file": "hazardous_batteries.jpg",
+    "target_category": "hazardous",
+    "ground_truth_label": "battery",
+    "source": "Wikimedia Commons (File:Batteries.jpg)"
+  },
+  {
+    "file": "recyclable_plastic_bottle.jpg",
+    "target_category": "recyclable",
+    "ground_truth_label": "plastic",
+    "source": "Wikimedia Commons (File:Plastic bottle.jpg)"
+  },
+  {
+    "file": "recyclable_cardboard_box.jpg",
+    "target_category": "recyclable",
+    "ground_truth_label": "cardboard",
+    "source": "TrashNet CS229 (dataset-resized/cardboard/cardboard1.jpg)"
+  },
+  {
+    "file": "recyclable_cardboard_packaging.jpg",
+    "target_category": "recyclable",
+    "ground_truth_label": "cardboard",
+    "source": "TrashNet CS229 (dataset-resized/cardboard/cardboard2.jpg)"
+  },
+  {
+    "file": "recyclable_aluminum_can.jpg",
+    "target_category": "recyclable",
+    "ground_truth_label": "metal",
+    "source": "TrashNet CS229 (dataset-resized/metal/metal1.jpg)"
+  },
+  {
+    "file": "recyclable_metal_tin.jpg",
+    "target_category": "recyclable",
+    "ground_truth_label": "metal",
+    "source": "TrashNet CS229 (dataset-resized/metal/metal2.jpg)"
+  },
+  {
+    "file": "recyclable_glass_jar.jpg",
+    "target_category": "recyclable",
+    "ground_truth_label": "brown-glass",
+    "source": "TrashNet CS229 (dataset-resized/glass/glass1.jpg)"
+  },
+  {
+    "file": "recyclable_green_glass.jpg",
+    "target_category": "recyclable",
+    "ground_truth_label": "green-glass",
+    "source": "TrashNet CS229 (dataset-resized/glass/glass15.jpg)"
+  },
+  {
+    "file": "recyclable_office_paper.jpg",
+    "target_category": "recyclable",
+    "ground_truth_label": "paper",
+    "source": "TrashNet CS229 (dataset-resized/paper/paper1.jpg)"
+  },
+  {
+    "file": "recyclable_newspaper.jpg",
+    "target_category": "recyclable",
+    "ground_truth_label": "paper",
+    "source": "TrashNet CS229 (dataset-resized/paper/paper2.jpg)"
+  },
+  {
+    "file": "recyclable_detergent_plastic.jpg",
+    "target_category": "recyclable",
+    "ground_truth_label": "plastic",
+    "source": "TrashNet CS229 (dataset-resized/plastic/plastic2.jpg)"
+  },
+  {
+    "file": "nonrecyclable_landfill_trash1.jpg",
+    "target_category": "non-recyclable",
+    "ground_truth_label": "trash",
+    "source": "TrashNet CS229 (dataset-resized/trash/trash1.jpg)"
+  },
+  {
+    "file": "nonrecyclable_styrofoam_crushed.jpg",
+    "target_category": "non-recyclable",
+    "ground_truth_label": "trash",
+    "source": "TrashNet CS229 (dataset-resized/trash/trash12.jpg)"
+  },
+  {
+    "file": "nonrecyclable_composite_wrapper.jpg",
+    "target_category": "non-recyclable",
+    "ground_truth_label": "trash",
+    "source": "TrashNet CS229 (dataset-resized/trash/trash24.jpg)"
+  },
+  {
+    "file": "hazardous_aaa_batteries.jpg",
+    "target_category": "hazardous",
+    "ground_truth_label": "battery",
+    "source": "Wikimedia Commons (File:Kodak AAA alkaline and zinc batteries.jpg)"
+  },
+  {
+    "file": "organic_rotten_apple.jpg",
+    "target_category": "organic",
+    "ground_truth_label": "biological",
+    "source": "Wikimedia Commons (File:Rotten apple under the tree.jpg)"
+  },
+  {
+    "file": "nonrecyclable_old_shoes.jpg",
+    "target_category": "non-recyclable",
+    "ground_truth_label": "shoes",
+    "source": "Wikimedia Commons (File:Old shoes.jpg)"
+  },
+  {
+    "file": "nonrecyclable_clothing_pile.jpg",
+    "target_category": "non-recyclable",
+    "ground_truth_label": "clothes",
+    "source": "Wikimedia Commons (File:Pile of clothes.jpg)"
+  }
+]
