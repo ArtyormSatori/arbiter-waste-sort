@@ -3,7 +3,7 @@
 > **Project Name**: WasteSense AI  
 > **Tagline**: Edge-vision AI waste classifier guiding consumers to the right municipal bin with instant visual recognition and actionable disposal rationale.  
 > **Target Track**: Theme: Rethinking Waste (Only)  
-> **Repository**: [https://github.com/ArtyormSatori/wastesense-ai](https://github.com/ArtyormSatori/wastesense-ai)
+> **Repository**: [https://github.com/ArtyormSatori/arbiter-waste-sort](https://github.com/ArtyormSatori/arbiter-waste-sort)
 
 ---
 
